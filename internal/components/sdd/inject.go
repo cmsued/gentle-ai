@@ -99,6 +99,29 @@ func Inject(homeDir string, adapter agents.Adapter) (InjectionResult, error) {
 	if adapter.SupportsSkills() {
 		skillDir := adapter.SkillsDir(homeDir)
 		if skillDir != "" {
+			sharedFiles := []string{
+				"persistence-contract.md",
+				"engram-convention.md",
+				"openspec-convention.md",
+			}
+
+			for _, fileName := range sharedFiles {
+				assetPath := "skills/_shared/" + fileName
+				content, readErr := assets.Read(assetPath)
+				if readErr != nil {
+					continue
+				}
+
+				path := filepath.Join(skillDir, "_shared", fileName)
+				writeResult, err := filemerge.WriteFileAtomic(path, []byte(content), 0o644)
+				if err != nil {
+					return InjectionResult{}, err
+				}
+
+				changed = changed || writeResult.Changed
+				files = append(files, path)
+			}
+
 			sddSkills := []string{
 				"sdd-init", "sdd-explore", "sdd-propose", "sdd-spec",
 				"sdd-design", "sdd-tasks", "sdd-apply", "sdd-verify", "sdd-archive",

@@ -36,6 +36,9 @@ func TestAllEmbeddedAssetsAreReadable(t *testing.T) {
 		"skills/sdd-spec/SKILL.md",
 		"skills/sdd-tasks/SKILL.md",
 		"skills/sdd-verify/SKILL.md",
+		"skills/_shared/persistence-contract.md",
+		"skills/_shared/engram-convention.md",
+		"skills/_shared/openspec-convention.md",
 
 		// Framework/coding skills
 		"skills/ai-sdk-5/SKILL.md",
@@ -49,6 +52,9 @@ func TestAllEmbeddedAssetsAreReadable(t *testing.T) {
 		"skills/typescript/SKILL.md",
 		"skills/zod-4/SKILL.md",
 		"skills/zustand-5/SKILL.md",
+		"skills/angular/SKILL.md",
+		"skills/dotnet/SKILL.md",
+		"skills/skill-creator/SKILL.md",
 	}
 
 	for _, path := range expectedFiles {
@@ -99,14 +105,23 @@ func TestEmbeddedAssetCount(t *testing.T) {
 		}
 	}
 
-	// We expect 20 skill directories (9 SDD + 11 framework/coding/testing).
-	if skillDirs != 20 {
-		t.Fatalf("expected 20 skill directories, got %d", skillDirs)
+	// We expect 24 skill directories (9 SDD + 14 framework/coding/testing/workflow + _shared).
+	if skillDirs != 24 {
+		t.Fatalf("expected 24 skill directories, got %d", skillDirs)
 	}
 
 	// Verify each skill directory has a SKILL.md.
 	for _, entry := range entries {
 		if !entry.IsDir() {
+			continue
+		}
+		if entry.Name() == "_shared" {
+			for _, sharedFile := range []string{"persistence-contract.md", "engram-convention.md", "openspec-convention.md"} {
+				sharedPath := "skills/_shared/" + sharedFile
+				if _, err := Read(sharedPath); err != nil {
+					t.Fatalf("shared directory missing %q: %v", sharedFile, err)
+				}
+			}
 			continue
 		}
 		skillPath := "skills/" + entry.Name() + "/SKILL.md"
