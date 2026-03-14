@@ -4,7 +4,7 @@
       "description": "Implement code changes from task definitions",
       "hidden": true,
       "mode": "subagent",
-      "prompt": "You are an SDD sub-agent for the apply phase. Your skill file is at ~/.config/opencode/skills/sdd-apply/SKILL.md — read it and follow its instructions.",
+      "prompt": "You are an SDD sub-agent for the apply phase. Read your skill file at ~/.config/opencode/skills/sdd-apply/SKILL.md and follow its instructions. It includes a Step 1 for loading the skill registry — do NOT skip it.",
       "tools": {
         "bash": true,
         "edit": true,
@@ -16,7 +16,7 @@
       "description": "Archive completed change artifacts",
       "hidden": true,
       "mode": "subagent",
-      "prompt": "You are an SDD sub-agent for the archive phase. Your skill file is at ~/.config/opencode/skills/sdd-archive/SKILL.md — read it and follow its instructions.",
+      "prompt": "You are an SDD sub-agent for the archive phase. Read your skill file at ~/.config/opencode/skills/sdd-archive/SKILL.md and follow its instructions. It includes a Step 1 for loading the skill registry — do NOT skip it.",
       "tools": {
         "bash": true,
         "edit": true,
@@ -28,7 +28,7 @@
       "description": "Create technical design from proposals",
       "hidden": true,
       "mode": "subagent",
-      "prompt": "You are an SDD sub-agent for the design phase. Your skill file is at ~/.config/opencode/skills/sdd-design/SKILL.md — read it and follow its instructions.",
+      "prompt": "You are an SDD sub-agent for the design phase. Read your skill file at ~/.config/opencode/skills/sdd-design/SKILL.md and follow its instructions. It includes a Step 1 for loading the skill registry — do NOT skip it.",
       "tools": {
         "bash": true,
         "edit": true,
@@ -40,7 +40,7 @@
       "description": "Investigate codebase and think through ideas",
       "hidden": true,
       "mode": "subagent",
-      "prompt": "You are an SDD sub-agent for the explore phase. Your skill file is at ~/.config/opencode/skills/sdd-explore/SKILL.md — read it and follow its instructions.",
+      "prompt": "You are an SDD sub-agent for the explore phase. Read your skill file at ~/.config/opencode/skills/sdd-explore/SKILL.md and follow its instructions. It includes a Step 1 for loading the skill registry — do NOT skip it.",
       "tools": {
         "bash": true,
         "edit": true,
@@ -52,7 +52,7 @@
       "description": "Bootstrap SDD context and project configuration",
       "hidden": true,
       "mode": "subagent",
-      "prompt": "You are an SDD sub-agent for the init phase. Your skill file is at ~/.config/opencode/skills/sdd-init/SKILL.md — read it and follow its instructions.",
+      "prompt": "You are an SDD sub-agent for the init phase. Read your skill file at ~/.config/opencode/skills/sdd-init/SKILL.md and follow its instructions. It includes a Step 1 for loading the skill registry — do NOT skip it.",
       "tools": {
         "bash": true,
         "edit": true,
@@ -81,7 +81,7 @@
       "description": "Create change proposals from explorations",
       "hidden": true,
       "mode": "subagent",
-      "prompt": "You are an SDD sub-agent for the propose phase. Your skill file is at ~/.config/opencode/skills/sdd-propose/SKILL.md — read it and follow its instructions.",
+      "prompt": "You are an SDD sub-agent for the propose phase. Read your skill file at ~/.config/opencode/skills/sdd-propose/SKILL.md and follow its instructions. It includes a Step 1 for loading the skill registry — do NOT skip it.",
       "tools": {
         "bash": true,
         "edit": true,
@@ -93,7 +93,7 @@
       "description": "Write detailed specifications from proposals",
       "hidden": true,
       "mode": "subagent",
-      "prompt": "You are an SDD sub-agent for the spec phase. Your skill file is at ~/.config/opencode/skills/sdd-spec/SKILL.md — read it and follow its instructions.",
+      "prompt": "You are an SDD sub-agent for the spec phase. Read your skill file at ~/.config/opencode/skills/sdd-spec/SKILL.md and follow its instructions. It includes a Step 1 for loading the skill registry — do NOT skip it.",
       "tools": {
         "bash": true,
         "edit": true,
@@ -105,7 +105,7 @@
       "description": "Break down specs and designs into implementation tasks",
       "hidden": true,
       "mode": "subagent",
-      "prompt": "You are an SDD sub-agent for the tasks phase. Your skill file is at ~/.config/opencode/skills/sdd-tasks/SKILL.md — read it and follow its instructions.",
+      "prompt": "You are an SDD sub-agent for the tasks phase. Read your skill file at ~/.config/opencode/skills/sdd-tasks/SKILL.md and follow its instructions. It includes a Step 1 for loading the skill registry — do NOT skip it.",
       "tools": {
         "bash": true,
         "edit": true,
@@ -117,7 +117,7 @@
       "description": "Validate implementation against specs",
       "hidden": true,
       "mode": "subagent",
-      "prompt": "You are an SDD sub-agent for the verify phase. Your skill file is at ~/.config/opencode/skills/sdd-verify/SKILL.md — read it and follow its instructions.",
+      "prompt": "You are an SDD sub-agent for the verify phase. Read your skill file at ~/.config/opencode/skills/sdd-verify/SKILL.md and follow its instructions. It includes a Step 1 for loading the skill registry — do NOT skip it.",
       "tools": {
         "bash": true,
         "edit": true,
